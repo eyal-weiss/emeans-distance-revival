@@ -1,6 +1,6 @@
 # Distance-aware revival for e-means
 
-Code for *Small Is Not Dead: Distance-Aware Cluster Revival for e-means* (Eyal Weiss, 2026; arXiv link to come).
+Code for *Small Is Not Dead: Distance-Aware Cluster Revival for e-means* (Eyal Weiss, 2026; [arXiv:2611.18238](https://arxiv.org/abs/2611.18238)).
 
 [e-means](https://arxiv.org/abs/2611.09501) (FAISS 1.16, `faiss.contrib.e_means`) periodically relocates the centres of small clusters (dead-cluster revival): every 5 batches, every cluster whose running count is below a tenth of the average count is removed, and its centre is reused to split a large cluster. The rule considers only size, so on data with small, isolated groups it repeatedly removes centres whose removal is costly.
 
@@ -55,6 +55,22 @@ Python 3.12, `faiss-cpu==1.16.0`, `numpy`, `scikit-learn` (experiments), `scipy`
   - `experiments/diag.py`: the bound-versus-utility diagnostic.
   - `experiments/illustration.py`: Figure 1.
 - **Tests.** `tests/` contains bit-identity tests against the library, including tie-heavy data (`python -m pytest tests`).
+
+## Citation
+
+If you use this code or its results, please cite the paper ([arXiv:2611.18238](https://arxiv.org/abs/2611.18238)):
+
+```bibtex
+@misc{weiss2026small,
+  title         = {Small Is Not Dead: Distance-Aware Cluster Revival for e-means},
+  author        = {Weiss, Eyal},
+  year          = {2026},
+  eprint        = {2611.18238},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2611.18238}
+}
+```
 
 ## License
 
