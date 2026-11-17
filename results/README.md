@@ -5,6 +5,12 @@
   - The utility-estimate arm (`arm=exact`) appears in three versions: untagged (original), `impl=exact_v2` (Amendment 2) and `impl=exact_v3` (Amendment 3, used in the paper). `analyze.py` keeps only the latest automatically.
 - **`timing.jsonl`:** the controlled, counterbalanced overhead timings (Section 5.6).
 - **`diag/*.json.gz`:** the bound-versus-estimate diagnostic logs (Section 5.7).
+- **`gpu/`:** the GPU validation, added after the paper (see the README's GPU section):
+  - `runs.jsonl.gz`: 450 runs of the released GPU classes (deterministic mode) and of the libraries;
+  - `runs_reference.jsonl.gz`: the same jobs with the first versions in `experiments/gpu/reference` (identical test errors and decisions);
+  - `timing.jsonl` and `timing_reference.jsonl`: wall time per fit (6 seeds, non-deterministic mode, shared GPU);
+  - `cpu_ref.json`: the paper's CPU numbers for the same configurations; `summary.txt`: the output of `experiments/gpu/analyze.py`.
+  - The `cent_sha` field is a per-process hash of the centres, comparable only within one run of `validate.py`.
 
 To regenerate the paper's tables and numbers:
 

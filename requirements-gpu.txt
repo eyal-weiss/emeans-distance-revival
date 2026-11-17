@@ -1,0 +1,3 @@
+# GPU classes (distance_revival.torch_emeans, distance_revival.omeans); tested versions
+torch==2.15.0
+triton==3.9.0
