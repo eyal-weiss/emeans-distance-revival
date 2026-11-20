@@ -13,6 +13,15 @@ where `delta_j` is the squared distance from its centre to the nearest other cen
 - The second clause (the abandonment clause) is a safeguard for a centre that has lost all its points far from every other centre; in the paper's experiments it rarely acts and has no measurable effect.
 - On the e-means paper's embedding benchmarks, the distance test never prevents a removal, and runs are bit-identical to the library.
 
+## Follow-up: net-gain revival
+
+A cost-based revival rule proposed for FAISS on the day before our paper
+([pull request #5915](https://github.com/facebookresearch/faiss/pull/5915)) is considerably stronger than distance-aware
+revival on our benchmarks. Our follow-up paper, *Revive What Pays: Evidence-Weighted Net-Gain Revival for Mini-Batch
+k-Means*, builds on it: a move is made only if the predicted gain of the split is more likely than not to exceed the
+predicted cost of the removal, with every estimate weighted by its evidence. Its code, protocols and records are in
+[eyal-weiss/emeans-net-gain-revival](https://github.com/eyal-weiss/emeans-net-gain-revival).
+
 ## Usage
 
 ```python
